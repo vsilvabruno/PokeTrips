@@ -1,0 +1,468 @@
+/* ==================================================
+   TRIP DATE
+   ================================================== */
+   .trip-date-container {
+    width: 100%;
+    margin-top: 18px;
+    font-size: 25px;
+  
+    @media only screen and (max-width: $mobile) {
+      font-size: 20px;
+      margin-top: 8px;
+    }
+  }
+  
+  /* ==================================================
+     SLIDER
+     ================================================== */
+  .slider-container {
+    position: relative;
+    overflow: hidden;
+  
+    /* Media Queries for different screen sizes */
+    @media only screen and (min-width: $tablet) {
+      @include desktop-container;
+      height: 600px;
+    }
+  
+    @media only screen and (max-width: $tablet) {
+      @include tablet-container;
+      height: 400px;
+    }
+  
+    @media only screen and (max-width: $mobile) {
+      @include mobile-container;
+      height: 300px;
+    }
+  
+    /* Slider Styles */
+    .slider {
+      /* Image Styles */
+      &-image {
+        min-width: 100%;
+        height: 100%;
+  
+        .image-wrapper {
+          width: 100%;
+          height: 100%;
+          margin-bottom: -14px;
+          background-color: black;
+          overflow: hidden;
+          opacity: 0;
+          animation: fadeInWrapper 0.5s forwards;
+  
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            animation: fadeInImage 0.5s forwards;
+          }
+        }
+      }
+  
+      /* Description Styling */
+      &-description {
+        position: absolute;
+        bottom: 20px;
+        padding: 0 10px;
+        height: 30px;
+        line-height: 0;
+        border-radius: 50px;
+        background: $mainThemeColor2;
+        color: $textColor1;
+        opacity: 0.9;
+        font-size: 16px;
+        z-index: 10;
+        box-shadow: 0px 9px 5px -8px rgba(0, 0, 0, 0.8);
+  
+        @media only screen and (min-width: $tablet) {
+          height: 40px;
+          font-size: 20px;
+        }
+      }
+  
+      /* Dot Navigation */
+      &-dots {
+        position: absolute;
+        top: 10px;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+  
+        .dot {
+          height: 10px;
+          width: 10px;
+          margin: 0 5px;
+          border-radius: 50%;
+          background-color: $mainThemeColor2;
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+          cursor: pointer;
+          transition: background-color 0.2s;
+  
+          &.active {
+            outline: 2px solid $mainThemeColor2;
+            background-color: $mainThemeColor3;
+          }
+  
+          &:hover {
+            background-color: $mainThemeColor3;
+          }
+        }
+      }
+  
+      /* Button Styles */
+      button {
+        position: absolute;
+        width: 80px;
+        padding: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        border: none;
+        border-radius: 50px;
+        background: $mainThemeColor2;
+        color: $textColor1;
+        opacity: 0.9;
+        box-shadow: 0px 9px 5px -8px rgba(0, 0, 0, 0.8);
+        font-size: 20px;
+        cursor: pointer;
+        transition: 0.2s;
+
+        @media only screen and (min-width: $tablet) {
+          width: 110px;
+          padding: 18px;
+          font-size: 30px;
+        }
+
+        &.prev {
+          left: -35px;
+          padding-left: 45px;
+        }
+
+        &.next {
+          right: -35px;
+          padding-right: 45px;
+        }
+
+        &:hover {
+          background: $mainThemeColor3;
+        }
+      }
+    }
+  
+    /* Keyframe Animations */
+    @keyframes fadeInWrapper {
+      to {
+        opacity: 1;
+      }
+    }
+  
+    @keyframes fadeInImage {
+      to {
+        opacity: 1;
+      }
+    }
+  }
+  
+  /* ==================================================
+     ZOOMED MAP
+     ================================================== */
+  .zoomed-map-container {
+    @media only screen and (min-width: $tablet) {
+      @include desktop-container;
+      max-height: 1000px;
+    }
+  
+    @media only screen and (max-width: $tablet) {
+      @include tablet-container;
+      max-height: 350px;
+    }
+  
+    @media only screen and (max-width: $mobile) {
+      @include mobile-container;
+      max-height: 280px;
+    }
+  }
+  
+  /* ========================================================
+     BOTTOM CONTAINER (TRIP SUMMARY, WEATHER AND ENCONTERS)
+     ======================================================== */
+  .bottom-container {
+    padding-top: 20px;
+    gap: 30px;
+    overflow-x: hidden;
+  
+    @media only screen and (min-width: $tablet) {
+      @include desktop-container;
+    }
+  
+    @media only screen and (max-width: $tablet) {
+      @include tablet-container;
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    @media only screen and (max-width: $mobile) {
+      @include mobile-container;
+      flex-direction: column;
+    }
+  }
+  
+  /* ==================================================
+     TRIP SUMMARY
+     ================================================== */
+  .tripsummary-container {
+    text-align: justify;
+  
+    @media only screen and (min-width: $tablet) {
+      width: 60%;
+    }
+  
+    @media only screen and (max-width: $mobile) {
+      @include component-margin-bottom;
+      margin: 0 20px;
+    }
+  }
+
+  /* ==================================================
+     WEATHER & ENCOUNTERS CONTAINER
+     ================================================== */
+  .weather-pkmn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    /* Responsive Layout */
+    @media only screen and (min-width: $tablet) {
+      width: 40%;
+      max-width: 400px;
+      margin-top: 30px;
+    }
+  
+    @media only screen and (max-width: $tablet) {
+      margin: 0 auto;
+      width: 70%;
+      max-width: 400px;
+    }
+  
+    @media only screen and (max-width: $mobile) {
+      margin: 0 auto;
+      width: 94%;
+      max-width: 400px;
+    }
+
+    p {
+      @include font-main-text;
+      line-height: 0;
+    }
+  }
+  
+  /* ==================================================
+     WEATHER
+     ================================================== */
+  .weather-container {
+    position: relative;
+    height: 325px;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 12px -8px rgba(0, 0, 0, 1);
+  
+    /* Current Weather Card */
+    .current {
+      &-card {
+        position: absolute;
+        width: 100%;
+  
+        .bg {
+          width: 100%;
+          height: 130px;
+          object-fit: cover;
+          filter: brightness(0.5);
+        }
+  
+        h3 {
+          position: inherit;
+          left: 20px;
+          top: 0;
+          text-align: left;
+          color: $textColor2;
+        }
+  
+        .info {
+          position: inherit;
+          top: 40px;
+          left: 20px;
+          width: 90%;
+          display: flex;
+          justify-content: space-between;
+          align-items: left;
+  
+          .icon {
+            width: 80px;
+            margin: -15px 0;
+          }
+  
+          .temperature {
+            font-size: 18px;
+            color: $textColor2;
+          }
+        }
+      }
+    }
+  
+    /* Forecast Weather Card */
+    .forecast {
+      &-card {
+        position: relative;
+        z-index: 0;
+        top: 130px;
+        width: 100%;
+  
+        .forecast-grid {
+          position: relative;
+          width: 100%;
+          margin: 0 auto;
+          padding: 10px 10px 20px 10px;
+          left: 50%;
+          transform: translate(-50%);
+          z-index: 10;
+          display: flex;
+          justify-content: space-between;
+          gap: 0px;
+  
+          .forecast-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+  
+            .icon {
+              width: 40px;
+              margin-bottom: -10px;
+            }
+  
+            h3 {
+              font-size: 18px;
+              text-align: center;
+              color: $textColor1;
+              margin: 0;
+            }
+  
+            p {
+              width: 50px;
+              font-size: 13px;
+              text-align: left;
+              color: $textColor1;
+              margin: 0 0 0 10px;
+              line-height: 30px;
+  
+              .fa-temperature-arrow-up {
+                color: #FD8A8A;
+              }
+  
+              .fa-temperature-arrow-down {
+                color: #9EA1D4;
+              }
+  
+              .fa-droplet {
+                color: #A8D1D1;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    .forecast-card::after {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, lightgray, white);
+    }
+  }  
+
+  /* ==================================================
+     ENCOUNTERS
+     ================================================== */
+     .encounters-container {
+      position: relative;
+      height: 240px;
+      border-radius: 15px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 0 12px -8px rgba(0, 0, 0, 1);
+    
+      .title {
+        position: absolute;
+        width: 100%;
+    
+        .bg {
+          width: 100%;
+          height: 60px;
+          object-fit: cover;
+          filter: brightness(0.5);
+        }
+    
+        h3 {
+          position: inherit;
+          left: 20px;
+          top: -10px;
+          text-align: left;
+          color: $textColor2;
+        }
+      }
+    
+      .pkmn {
+        position: relative;
+        width: 100%;
+        padding: 10px 10px 20px 10px;
+        top: 60px;
+        left: 50%;
+        transform: translate(-50%);
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
+      
+        a {
+          text-decoration: none;
+
+          h3 {
+            position: relative;
+            z-index: 10;
+            height: 0;
+            top: -35px;
+            text-transform: capitalize;
+            font-size: 16px;
+            color: $textColor1;
+
+            &:first-of-type {
+              color: gray;
+            }
+          }
+        
+          img {
+            position: relative;
+            z-index: 10;
+            height: 110px;
+          }
+        }
+      }
+    
+      .pkmn::after {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, lightgray, white);
+      }
+    }

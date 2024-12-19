@@ -1,0 +1,68 @@
+/* ==================================================
+   ABOUT SECTION STYLES
+   ================================================== */
+
+   .about-container {
+    position: relative;
+    align-items: center;
+
+    /* Responsive Layout */
+    @media only screen and (min-width: $tablet) {
+        @include desktop-container;
+        gap: 50px;
+    }
+
+    @media only screen and (max-width: $tablet) {
+        @include tablet-container;
+        flex-direction: column;
+    }
+
+    @media only screen and (max-width: $mobile) {
+        @include mobile-container;
+        flex-direction: column;
+    }
+
+    /* Image Styling */
+    img {
+        -webkit-box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.5);
+        box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.5);
+
+        /* Desktop Image Styling */
+        @media only screen and (min-width: $tablet) {
+            width: 300px;
+            height: auto;
+        }
+
+        /* Tablet & Mobile Image Styling */
+        @media only screen and (max-width: $tablet) {
+            @include adjustable-content;
+            @include component-margin-bottom;
+        }
+
+        @media only screen and (max-width: $mobile) {
+            @include adjustable-content;
+            @include component-margin-bottom;
+        }
+    }
+
+    /* Description Styling */
+    &-description {
+        text-align: justify;
+
+        /* Desktop & Tablet Layout */
+        @media only screen and (min-width: $tablet) {
+            width: 60%;
+        }
+
+        /* Mobile Layout */
+        @media only screen and (max-width: $mobile) {
+            margin: 0 20px;
+        }
+
+        /* First Child & Heading */
+        :first-child, h3 {
+            margin: 0;
+        }
+    }
+}

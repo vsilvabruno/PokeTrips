@@ -1,0 +1,32 @@
+/* ==================================================
+   PAGE 404 STYLES
+   ================================================== */
+
+   .page404 {
+    &-container {
+
+        /* Image Styling */
+        img {
+            @include adjustable-content;
+            width: 500px;
+            margin-top: 40px;
+        }
+
+        /* Heading */
+        h2 {
+            font-size: 40px;
+        }
+
+        /* Button Styling */
+        button {
+            @include btn;
+            width: 150px;
+
+            /* Button Hover State */
+            &:hover {
+                background-color: $mainThemeColor3;
+                transition: 0.2s;
+            }
+        }
+    }
+}

@@ -1,0 +1,218 @@
+/* ==================================================
+   HERO SECTION STYLES
+   ================================================== */
+
+   .hero {
+    position: relative;
+
+    /* Hero Container (Desktop and Tablet) */
+    @media only screen and (min-width: $mobile) {
+        @include hero-container;
+        background: url(/images/hero/kanto_horizontal.jpeg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 500px;
+    }
+
+    /* Hero Container (Mobile) */
+    @media only screen and (max-width: $mobile) {
+        @include mobile-container;
+        background: url(/images/hero/kanto_vertical.jpeg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 500px;
+    }
+
+    /* Hero Description */
+    &-description {
+        
+        /* Desktop & Tablet */
+        @media only screen and (min-width: $tablet) {
+            position: absolute;
+            z-index: 10;
+            text-align: right;
+            line-height: 40px;
+            right: 5%;
+            top: 60%;
+
+            h1 {
+                @include font-hero-slogan;
+                font-size: 50px;
+            }
+
+            h2 {
+                @include font-hero-description;
+                font-size: 30px;
+            }
+        }
+
+        /* Tablet */
+        @media only screen and (max-width: $tablet) {
+            position: absolute;
+            z-index: 10;
+            width: 350px;
+            text-align: center;
+            line-height: 60px;
+            top: 20%;
+
+            h1 {
+                @include font-hero-slogan;
+                font-size: 40px;
+            }
+
+            h2 {
+                @include font-hero-description;
+                font-size: 25px;
+                line-height: 40px;
+            }
+        }
+
+        /* Mobile */
+        @media only screen and (max-width: $mobile) {
+            position: absolute;
+            z-index: 10;
+            width: 250px;
+            text-align: center;
+            top: 18%;
+
+            h1 {
+                @include font-hero-slogan;
+                font-size: 30px;
+                line-height: 45px;
+            }
+
+            h2 {
+                @include font-hero-description;
+                font-size: 15px;
+                line-height: 30px;
+            }
+        }
+    }
+}
+
+/* ==================================================
+   TOWN CARDS SECTION STYLES
+   ================================================== */
+
+/* Town Cards Container */
+.town-cards-container {
+    @media only screen and (min-width: $tablet) {
+        @include desktop-container;
+        @include town-cards-layout;
+        @include component-margin-bottom;
+        min-width: 1200px;
+    }
+
+    @media only screen and (max-width: $tablet) {
+        @include tablet-container;
+        @include town-cards-layout;
+        @include component-margin-bottom;
+    }
+
+    @media only screen and (max-width: $mobile) {
+        @include mobile-container;
+        @include town-cards-layout;
+        @include component-margin-bottom;
+        max-width: 500px;
+    }
+}
+
+/* Card Container */
+.card-container {
+    position: relative;
+    width: 200px;
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    -webkit-box-shadow: 4px 4px 20px -8px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 4px 4px 20px -8px rgba(0, 0, 0, 1);
+    box-shadow: 4px 4px 20px -8px rgba(0, 0, 0, 1);
+    transition: 0.2s;
+    z-index: 0;
+
+    /* Card Image */
+    img {
+        object-fit: cover;
+        filter: brightness(0.8);
+        transition: 0.2s;
+    }
+
+    /* Card Hover State */
+    &.hover {
+        transform: scale(1.05);
+        filter: brightness(1.4);
+        transition: 0.2s;
+    }
+
+    /* Gradient Overlay */
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: 10;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    }
+}
+
+/* Card Text Container */
+.card-text-container {
+    position: absolute;
+    z-index: 20;
+    width: 100%;
+    text-align: right;
+    top: 67%;
+    right: 10%;
+
+    h4 {
+        color: $textColor2;
+        line-height: 0;
+    }
+
+    h5 {
+        color: $mainThemeColor2;
+        line-height: 0;
+    }
+}
+
+/* ==================================================
+   MAP SECTION STYLES
+   ================================================== */
+
+/* Leaflet Container */
+.leaflet-container {
+    position: relative;
+    height: 500px;
+    z-index: 0;
+
+    @media only screen and (min-width: $tablet) {
+        @include desktop-container;
+        min-width: 1060px;
+    }
+
+    @media only screen and (max-width: $tablet) {
+        @include tablet-container;
+    }
+
+    @media only screen and (max-width: $mobile) {
+        @include mobile-container;
+    }
+}
+
+/* Map Popup */
+.map-popup {
+    text-decoration: none;
+    cursor: pointer;
+
+    /* Map Popup Text */
+    &-text {
+        @include font-btn;
+        font-size: 14px;
+    }
+}

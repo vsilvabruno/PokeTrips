@@ -1,0 +1,96 @@
+/* ==================================================
+   FONT IMPORTS
+   ================================================== */
+
+/* Custom Fonts */
+@font-face {
+    font-family: "Janda Manatee Solid";
+    src: url("../../fonts/JandaManateeSolid.woff") format("woff"),
+         url("../../fonts/JandaManateeSolid.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Parkinsans Medium";
+    src: url("../../fonts/Parkinsans-Medium.woff") format("woff"),
+         url("../../fonts/Parkinsans-Medium.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Parkinsans SemiBold";
+    src: url("../../fonts/Parkinsans-SemiBold.woff") format("woff"),
+         url("../../fonts/Parkinsans-SemiBold.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Parkinsans Light";
+    src: url("../../fonts/Parkinsans-Light.woff") format("woff"),
+         url("../../fonts/Parkinsans-Light.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Parkinsans Regular";
+    src: url("../../fonts/Parkinsans-Regular.woff") format("woff"),
+         url("../../fonts/Parkinsans-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* ==================================================
+   FONT MIXINS
+   ================================================== */
+
+/* Hero Section Fonts */
+@mixin font-hero-slogan {
+    font-family: "Janda Manatee Solid", sans-serif;
+    color: $textColor2;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+@mixin font-hero-description {
+    font-family: "Parkinsans Medium", sans-serif;
+    color: $textColor2;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+/* Title Fonts */
+@mixin font-title {
+    font-family: "Parkinsans SemiBold", sans-serif;
+    color: $textColor1;
+    font-size: 50px;
+}
+
+/* Main Body Text */
+@mixin font-main-text {
+    font-family: "Parkinsans Light", sans-serif;
+    color: $textColor1;
+    font-size: 18px;
+    line-height: 40px;
+}
+
+/* Header & Footer Fonts */
+@mixin font-header-footer {
+    font-family: "Parkinsans Regular", sans-serif;
+    color: $textColor1;
+    font-size: 16px;
+}
+
+/* Button Fonts */
+@mixin font-btn {
+    font-family: "Parkinsans SemiBold", sans-serif;
+    color: $textColor1;
+    font-size: 16px;
+}

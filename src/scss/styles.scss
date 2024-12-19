@@ -1,0 +1,21 @@
+/* ============================
+   ABSTRACT (Core Utilities)
+   ============================ */
+   @import 'abstract/mixins';         // Reusable mixins
+   @import 'abstract/variables';      // Global variables
+   @import 'abstract/typography';     // Font styles
+   
+/* ============================
+   GLOBAL STYLES (Base styles)
+   ============================ */
+   @import 'structure/global';        // Global base styles
+   
+/* ============================
+   LAYOUT (Page Structure)
+   ============================ */
+   @import 'structure/header_footer';  // Styles for header and footer
+   @import 'structure/home';           // Home page layout
+   @import 'structure/town';           // Town page layout
+   @import 'structure/form';           // New Location form layout
+   @import 'structure/about';          // About page layout
+   @import 'structure/notfound';       // 404 Page layout

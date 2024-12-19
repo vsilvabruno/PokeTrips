@@ -1,0 +1,157 @@
+/* ==================================================
+   NEW LOCATION FORM STYLES
+   ================================================== */
+
+   .form {
+    /* Container Styles */
+    &-container {
+        margin: 0 auto;
+        margin-top: -10px;
+
+        /* Responsive Layout */
+        @media only screen and (min-width: $tablet) {
+            width: 400px;
+        }
+
+        @media only screen and (max-width: $tablet) {
+            width: 330px;
+        }
+
+        @media only screen and (max-width: $mobile) {
+            width: 280px;
+        }
+    }
+
+    /* Element Styles */
+    &-element {
+        position: relative;
+        width: 100%;
+        height: 60px;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+
+        /* Label Styles */
+        label {
+            @include form-element-width;
+            text-align: left;
+            left: 5px;
+            top: -5px;
+        }
+
+        /* Input Styles */
+        input {
+            @include form-element-width;
+            height: 30px;
+            left: 0;
+            bottom: 0;
+            box-sizing: border-box;
+            padding: 0 10px;
+            border-radius: 50px;
+            border: 1px solid grey;
+            @include font-main-text;
+            font-size: 14px;
+
+            &::placeholder {
+                @include font-main-text;
+                font-size: 14px;
+                color: $textPholderColor;
+            }
+
+            &[type="text"] {
+                @include font-main-text;
+                font-size: 14px;
+            }
+
+            &.error {
+                border: 2px solid $textErrorColor;
+            }
+        }
+
+        /* Textarea Styles */
+        textarea {
+            @include form-element-width;
+            @include font-main-text;
+            height: 120px;
+            top: 28px;
+            left: 0;
+            bottom: 0;
+            box-sizing: border-box;
+            padding: 5px 10px 10px 10px;
+            border-radius: 10px;
+            border: 1px solid grey;
+            resize: none;
+            font-size: 14px;
+            line-height: 20px;
+
+            &::placeholder {
+                @include font-main-text;
+                line-height: 20px;
+                font-size: 14px;
+                color: $textPholderColor;
+            }
+
+            &.error {
+                border: 2px solid $textErrorColor;
+            }
+        }
+
+        /* Error Styles */
+        .error {
+            border: 2px solid $textErrorColor;
+        }
+    }
+
+    /* Date Input Styles */
+    &-date {
+        width: 100%;
+        display: flex;
+        gap: 15px;
+        justify-content: space-between;
+
+        @media only screen and (max-width: $mobile) {
+            flex-direction: column;
+            gap: 0;
+        }
+
+        input[type="date"] {
+            @include font-main-text;
+            font-size: 14px;
+            height: 30px;
+            border-radius: 50px;
+            padding: 0 10px;
+            border: 1px solid grey;
+
+            &.error {
+                border: 2px solid $textErrorColor;
+            }
+        }
+    }
+
+    /* Alert Styles */
+    &-alert {
+        @include font-main-text;
+        font-size: 15px;
+        margin-top: 90px;
+        width: 100%;
+        height: 40px;
+
+        &.error {
+            color: $textErrorColor;
+        }
+
+        &.success {
+            color: $textSuccessColor;
+        }
+    }
+
+    /* Submit Button Styles */
+    &-submit-btn {
+        @include btn;
+        transition: 0.2s;
+
+        &:hover {
+            background-color: $mainThemeColor3;
+            transition: 0.2s;
+        }
+    }
+}

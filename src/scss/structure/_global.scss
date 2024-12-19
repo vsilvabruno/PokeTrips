@@ -1,0 +1,93 @@
+/* ==================================================
+   GLOBAL STYLES
+   ================================================== */
+
+/* HTML & BODY */
+html {
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Global box-sizing reset */
+* {
+    box-sizing: border-box;
+}
+
+/* ==================================================
+   MAIN CONTAINER STYLES
+   ================================================== */
+
+main {
+    @include font-main-text;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 40px;
+    margin-top: 80px;
+    margin-bottom: 150px;
+    box-sizing: border-box;
+
+    /* Title Container */
+    .title-container {
+        @include font-title;
+        padding: 40px;
+        position: relative;
+        overflow: hidden;
+
+        /* Responsive Font Size for Title */
+        @media only screen and (max-width: $mobile) {
+            font-size: 40px;
+            padding: 25px;
+        }
+    }
+}
+
+/* ==================================================
+   LOADING & ERROR CONTAINER STYLES
+   ================================================== */
+
+/* Loading */
+.loading-container {
+    @include font-main-text;
+    font-size: 24px;
+    margin: 80px 0 80px 0;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    img {
+        @include adjustable-content;
+        margin: 0 auto;
+        width: 100px;
+        
+    }
+}
+
+/* Error */
+.error-container {
+    @include font-main-text;
+    font-size: 26px;
+    color: $textErrorColor;
+    margin: 80px 0 80px 0;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    img {
+        @include adjustable-content;
+        margin: 0 auto;
+        width: 100px;
+        
+    }
+}
