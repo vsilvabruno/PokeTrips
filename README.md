@@ -50,7 +50,6 @@ Once the server is up and running, you can begin exploring the **PokeTrips** blo
 
 * **Blog Posts**: Each post details a different trip to Kanto’s iconic locations, such as Pallet Town, Cerulean City, and the Pokémon League.
 * **Interactive Maps**: The Kanto region map features interactive markers highlighting each destination mentioned in the blog posts. The coordinates on the map are approximations of the real-world locations in Kanto, Japan.
-* **AI-Generated Images**: All images featured in the blog posts are AI-generated using [Microsoft Designer](https://designer.microsoft.com/), bringing the Kanto region and Pokémon world to life.
 
 ---
 
